@@ -64,6 +64,7 @@ export const WeatherListScreen = () => {
         currentWeatherData={list[0].weather[0]}
       />
       <SectionList
+        bounces={false}
         sections={weekSections}
         keyExtractor={keyExtractor}
         renderItem={renderWeather}

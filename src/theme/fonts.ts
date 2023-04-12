@@ -1,6 +1,13 @@
 import { scale } from 'react-native-size-scaling';
 
 export const FONTS = {
+  weight: {
+    [400]: 400,
+    [500]: 500,
+    [600]: 600,
+    [700]: 700,
+    [800]: 800,
+  },
   size: {
     [7]: `${scale(7)}px`,
     [11]: `${scale(11)}px`,
@@ -24,4 +31,5 @@ export const FONTS = {
 };
 
 export type TFontSizes = keyof typeof FONTS.size;
+export type TFontWeights = keyof typeof FONTS.weight;
 export type TFontFamilies = keyof typeof FONTS.family;
