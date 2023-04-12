@@ -1,5 +1,7 @@
+import { FlatList } from 'react-native-gesture-handler';
+
 import React, { FC } from 'react';
-import { Animated, FlatList, ListRenderItem } from 'react-native';
+import { Animated, ListRenderItem } from 'react-native';
 
 import { CustomStatusBar } from '@components/atoms/status-bar';
 import { Slide } from '@components/molecules/slide';
