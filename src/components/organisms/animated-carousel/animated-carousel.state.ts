@@ -1,10 +1,10 @@
-import { format } from 'date-fns';
 import { useRef } from 'react';
+import { format } from 'date-fns';
 import { Animated, ViewToken } from 'react-native';
 
-import { TAnimatedCarousel } from './animated-carousel.types';
-
 import { useSizes } from '@services/hooks/size.hook';
+
+import { TAnimatedCarousel } from './animated-carousel.types';
 
 export const useAnimatedCarouselState = ({
   weatherDays,
@@ -47,5 +47,6 @@ export const useAnimatedCarouselState = ({
     weatherDays,
     currentDate,
     onItemChange,
+    setCurrentIndex,
   };
 };

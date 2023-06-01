@@ -1,18 +1,18 @@
+import React, { memo, useMemo } from 'react';
 import {
   BottomSheetModal,
   useBottomSheetDynamicSnapPoints,
 } from '@gorhom/bottom-sheet';
-import React, { memo, useMemo } from 'react';
 
-import { CustomBottomSheetBackdrop } from '@components/atoms/custom-bottom-sheet-backdrop';
 import { Text } from '@components/atoms/text';
-import { AnimatedCarousel } from '../animated-carousel';
-import { IWeatherBottomSheet } from './weather-bottom-sheet.types';
-
 import { getAverageHourForDay } from '@components/molecules/slide/slide.utils';
-import { useWeatherBottomSheetState } from './weather-bottom-sheet.state';
+import { CustomBottomSheetBackdrop } from '@components/atoms/custom-bottom-sheet-backdrop';
 
 import { COLOR } from '@theme/colors';
+
+import { AnimatedCarousel } from '../animated-carousel';
+import { IWeatherBottomSheet } from './weather-bottom-sheet.types';
+import { useWeatherBottomSheetState } from './weather-bottom-sheet.state';
 import { WeatherBottomSheetStyles as Styled } from './weather-bottom-sheet.styles';
 
 export const WeatherBottomSheet: React.FC<IWeatherBottomSheet> = memo(
@@ -48,11 +48,11 @@ export const WeatherBottomSheet: React.FC<IWeatherBottomSheet> = memo(
       <BottomSheetModal
         detached
         enablePanDownToClose
+        handleComponent={null}
         ref={bottomSheetModalRef}
         handleHeight={animatedHandleHeight}
         contentHeight={animatedContentHeight}
         snapPoints={animatedSnapPoints}
-        handleComponent={null}
         onDismiss={onDismissBottomSheet}
         backdropComponent={(props) => <CustomBottomSheetBackdrop {...props} />}
       >

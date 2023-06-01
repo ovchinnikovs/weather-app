@@ -4,10 +4,10 @@ import { CustomStatusBar } from '@components/atoms/status-bar';
 import { Title } from '@components/atoms/title';
 
 import { useSizes } from '@services/hooks/size.hook';
-import { useOnBoardingState } from './onboarding.state';
 
 import { IMAGES } from '@constants/images';
 
+import { useOnBoardingState } from './onboarding.state';
 import { OnBoardingStyled as Styled } from './onboarding.styles';
 
 export const Onboarding = () => {

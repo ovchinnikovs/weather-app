@@ -3,11 +3,11 @@ import React, { FC } from 'react';
 import WeatherChart from 'react-native-weather-chart';
 
 import { Icon, TIconNames } from '@components/atoms/icon';
-import { ISlide } from './slide.types';
-
-import { getAverageHourForDay, ICON_WEATHER_MAP } from './slide.utils';
 
 import { COLOR } from '@theme/colors';
+
+import { ISlide } from './slide.types';
+import { getAverageHourForDay, ICON_WEATHER_MAP } from './slide.utils';
 import { SlideStyles as Styled } from './slide.styles';
 
 export const Slide: FC<ISlide> = (props) => {

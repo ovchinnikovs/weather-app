@@ -1,5 +1,9 @@
 import { format } from 'date-fns';
 
+import { isToday } from '@services/helpers/date';
+
+import { IList } from '@typings/types.common';
+
 import {
   IFormattedAllTemperatureOfDay,
   IFormattedWeatherDayByWeek,
@@ -7,10 +11,6 @@ import {
   IWeatherItemDataWithDay,
   IWeatherItemDataWithTitleWeek,
 } from './weather-list.types';
-
-import { isToday } from '@services/helpers/date';
-
-import { IList } from '@typings/types.common';
 
 const getDayOfWeek = (date: string) => {
   const dirtyDate = new Date(date);

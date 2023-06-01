@@ -1,8 +1,8 @@
 import { AxiosPromise } from 'axios';
 
-import { IWeatherDataPayload, IWeatherDataResponse } from './types.common';
-
 import { GET_ENDPOINTS } from '@constants/endpoints';
+
+import { IWeatherDataPayload, IWeatherDataResponse } from './types.common';
 
 export type TResponse<T> = AxiosPromise<T>;
 

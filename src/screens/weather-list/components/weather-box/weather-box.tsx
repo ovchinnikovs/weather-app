@@ -1,8 +1,9 @@
-import { format } from 'date-fns';
 import React, { FC } from 'react';
 import { FlatList, ListRenderItem } from 'react-native';
+import { format } from 'date-fns';
 
 import { TIconNames } from '@components/atoms/icon';
+
 import { IWeatherItemDataWithDay } from '@screens/weather-list/weather-list.types';
 
 import { useSizes } from '@services/hooks/size.hook';
@@ -20,17 +21,17 @@ interface IWeatherBox {
 }
 
 export const WeatherBox: FC<IWeatherBox> = (props) => {
+  const { deviceWidth } = useSizes();
+
   const { isLast, item, openWeatherModal } = props;
   const { dayOfWeek, list: weatherHours } = item;
-
-  const { deviceWidth } = useSizes();
 
   const renderWeatherHours: ListRenderItem<IList> = ({ item, index }) => {
     const temp = Math.round(item.main.temp);
     const hour = format(new Date(item.dt_txt), 'HH');
-
     const iconType = `w${item.weather[0].icon}` as TIconNames;
     const isLast = index === weatherHours.length - 1;
+
     return (
       <Styled.HourBox isLast={isLast} onPress={openWeatherModal}>
         <Styled.Hour>{hour}</Styled.Hour>

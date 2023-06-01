@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
 import { scale } from 'react-native-size-scaling';
 
-import { ICON_MAP } from './icon.map';
-import { IIconProps } from './icon.types';
-
 import { HIT_SLOP_BIG } from '@constants/hit-slop';
 import { ACTIVE_OPACITY } from '@constants/props';
 
 import { IconStyles as Styled } from './icon.styles';
+import { ICON_MAP } from './icon.map';
+import { IIconProps } from './icon.types';
 
 export type TIconNames = keyof typeof ICON_MAP;
 

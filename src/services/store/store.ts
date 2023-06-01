@@ -1,12 +1,12 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { configureStore } from '@reduxjs/toolkit';
-import { persistReducer, persistStore } from 'redux-persist';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import createSagaMiddleware from 'redux-saga';
-
-import rootSaga from './root-sagas';
+import { persistReducer, persistStore } from 'redux-persist';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 import { rootReducer, TRootReducer } from '@services/store/root';
+
+import rootSaga from './root-sagas';
 
 const persistConfig = {
   key: 'root',

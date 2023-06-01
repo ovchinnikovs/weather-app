@@ -1,13 +1,13 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Onboarding } from '@screens/onboarding';
 import { WeatherListScreen } from '@screens/weather-list';
 
-import { useRootState } from './root.state';
-
 import { DISABLED_HEADER_SWIPE_NAVIGATION_SCREEN } from '@constants/navigation';
 import { APP_ROUTES } from '@constants/routes';
+
+import { useRootState } from './root.state';
 
 const RootStack = createNativeStackNavigator();
 
