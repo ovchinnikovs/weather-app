@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { ActivityIndicator } from 'react-native';
 
-import { IButton } from './button.types';
-
 import { ACTIVE_OPACITY } from '@constants/props';
 
 import { COLOR } from '@theme/colors';
+
+import { IButton } from './button.types';
 import { ButtonStyles as Styled } from './button.styles';
 
 export const Button: FC<IButton> = (props) => {
@@ -63,7 +63,7 @@ export const Button: FC<IButton> = (props) => {
             <Styled.Text
               fontSize={fontSize}
               weight={fontWeight}
-              color={textColor ? textColor : COLOR.mono.white}
+              color={textColor || COLOR.mono.white}
             >
               {text}
             </Styled.Text>

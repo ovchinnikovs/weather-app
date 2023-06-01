@@ -2,21 +2,14 @@ import { css } from 'styled-components/native';
 
 import { ISpacerControlProps } from './spacer.typings';
 
-const getStartGap = (props: ISpacerControlProps) => {
-  return props.index === 0
-    ? props.startEndGap || props.gap
-    : (props.gap || 0) / 2;
-};
+const getStartGap = (props: ISpacerControlProps) =>
+  props.index === 0 ? props.startEndGap || props.gap : (props.gap || 0) / 2;
 
-const getEndGap = (props: ISpacerControlProps) => {
-  return props.isLastItem
-    ? props.startEndGap || props.gap
-    : (props.gap || 0) / 2;
-};
+const getEndGap = (props: ISpacerControlProps) =>
+  props.isLastItem ? props.startEndGap || props.gap : (props.gap || 0) / 2;
 
-const getMiddleGap = (props: ISpacerControlProps) => {
-  return props.isLastItem ? 0 : props.gap || 0;
-};
+const getMiddleGap = (props: ISpacerControlProps) =>
+  props.isLastItem ? 0 : props.gap || 0;
 
 export const equalHorizontal = (props: ISpacerControlProps) => css`
   margin-left: ${getStartGap(props)}px;

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { groupWeatherByDayOfWeek } from '@screens/weather-list';
-import { IWeatherBottomSheet } from './weather-bottom-sheet.types';
 
 import { useSelector } from '@services/helpers/store.helper';
+
+import { IWeatherBottomSheet } from './weather-bottom-sheet.types';
 
 export const useWeatherBottomSheetState = ({
   initialIndex,

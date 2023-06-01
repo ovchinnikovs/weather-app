@@ -1,10 +1,10 @@
 import styled from 'styled-components/native';
 import { space } from 'styled-system';
 
-import { ITitleProps } from './title.types';
-
 import { COLOR } from '@theme/colors';
 import { FONTS } from '@theme/fonts';
+
+import { ITitleProps } from './title.types';
 
 export const Title = styled.Text<ITitleProps>`
   font-weight: ${FONTS.weight[700]};

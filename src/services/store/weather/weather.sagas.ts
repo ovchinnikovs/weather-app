@@ -5,6 +5,7 @@ import {
   todoRequestWeatherData,
   todoSuccessRequestWeatherData,
 } from './weather.reducer';
+import { APP_CONFIG } from '@constants/config';
 
 const fetchTodoSaga = async () =>
   await fetchData({
@@ -13,7 +14,7 @@ const fetchTodoSaga = async () =>
       lat: '49.5557716',
       lon: '25.591886',
       lang: 'en',
-      appid: '6ede5ee488bfcc22d12d5a4b62b4cd68',
+      appid: APP_CONFIG.WEATHER_APP_ID,
       units: 'metric',
     },
   });

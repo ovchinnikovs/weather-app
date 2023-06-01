@@ -1,8 +1,8 @@
 import { Dimensions } from 'react-native';
 import { isAndroid, isIOS, isTablet } from 'react-native-size-scaling';
 
-export const IS_IOS = isAndroid;
-export const IS_ANDROID = isIOS;
+export const IS_IOS = isIOS;
+export const IS_ANDROID = isAndroid;
 export const IS_TABLET = isTablet;
 
 export const DEVICE_HEIGHT = Dimensions.get('window').height;

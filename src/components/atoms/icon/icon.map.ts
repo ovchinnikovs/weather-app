@@ -1,7 +1,3 @@
-import cross_input from '@assets/icons/cross-input.svg';
-import cross from '@assets/icons/cross.svg';
-import arrow_down from '@assets/icons/down-arrow.svg';
-import arrow_up from '@assets/icons/up-arrow.svg';
 import w04d from '@assets/icons/weather-conditions/broken-clouds-day.svg';
 import w04n from '@assets/icons/weather-conditions/broken-clouds-night.svg';
 import w01d from '@assets/icons/weather-conditions/clear-sky-day.svg';
@@ -21,7 +17,13 @@ import w13n from '@assets/icons/weather-conditions/snow-night.svg';
 import w11d from '@assets/icons/weather-conditions/thunderstorm-day.svg';
 import w11n from '@assets/icons/weather-conditions/thunderstorm-night.svg';
 
+import cross from '@assets/icons/cross.svg';
+import cross_input from '@assets/icons/cross-input.svg';
+import arrow_down from '@assets/icons/down-arrow.svg';
+import arrow_up from '@assets/icons/up-arrow.svg';
+
 export const ICON_MAP = {
+  // weather icons
   w01d,
   w01n,
   w02d,
@@ -40,6 +42,8 @@ export const ICON_MAP = {
   w13n,
   w50d,
   w50n,
+
+  // general icons
   cross,
   arrow_up,
   arrow_down,

@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { Linking, TextProps, TouchableOpacity } from 'react-native';
 
-import { IText } from './text.types';
-
 import { HIT_SLOP_SMALL } from '@constants/hit-slop';
 import { ACTIVE_OPACITY } from '@constants/props';
 
 import { COLOR } from '@theme/colors';
+
+import { IText } from './text.types';
 import { TextStyles as Styled } from './text.styles';
 
 export const Text: FC<IText & TextProps> = (props) => {

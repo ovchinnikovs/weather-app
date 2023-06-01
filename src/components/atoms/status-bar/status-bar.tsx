@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 
-import { ICustomStatusBar } from './status-bar.types';
-
 import { useSizes } from '@services/hooks/size.hook';
 
 import { COLOR } from '@theme/colors';
+
+import { ICustomStatusBar } from './status-bar.types';
 
 export const CustomStatusBar: FC<ICustomStatusBar> = ({
   background,

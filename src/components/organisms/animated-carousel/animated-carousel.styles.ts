@@ -18,7 +18,7 @@ export const AnimatedCarouselStyles = {
     align-items: center;
     margin: 0 0 15px;
   `,
-  Day: styled.View`
+  Day: styled.Pressable`
     flex-direction: column;
   `,
   CircleDay: styled(Animated.View)`
@@ -50,10 +50,4 @@ export const AnimatedCarouselStyles = {
   Button: styled(Button)`
     margin: 0 28px ${scale(30)}px;
   `,
-  // Dot: styled(Animated.View)`
-  //   height: 5px;
-  //   width: 5px;
-  //   border-radius: 4.5px;
-  //   margin: 0 4px;
-  // `,
 };

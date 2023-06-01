@@ -4,13 +4,13 @@ import { Button } from '@components/atoms/button';
 import { Text } from '@components/atoms/text';
 import { Title } from '@components/atoms/title';
 
-import { DEVICE_HEIGHT } from '@services/helpers/dimensions.helper';
+import { DEVICE_HEIGHT, IS_IOS } from '@services/helpers/dimensions.helper';
 
 import { COLOR } from '@theme/colors';
 
 export const WeatherBottomSheetStyles = {
   BottomSheetInner: styled.View`
-    height: ${DEVICE_HEIGHT - 50}px;
+    height: ${DEVICE_HEIGHT - (IS_IOS ? 56 : 16)}px;
     border-top-right-radius: 14px;
     border-top-left-radius: 14px;
     background-color: ${COLOR.primary.main};
@@ -44,9 +44,4 @@ export const WeatherBottomSheetStyles = {
     margin: 7px 0 0 0;
     color: ${COLOR.gray.jumbo};
   `,
-  // WeatherDescription: styled.View``,
-  // WeatherDescription: styled.View``,
-  // WeatherDescription: styled.View``,
-  // WeatherDescription: styled.View``,
-  // WeatherDescription: styled.View``,
 };

@@ -1,10 +1,9 @@
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
-import { NavigationContainer } from '@react-navigation/native';
 import React, { FC } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { PersistGate } from 'redux-persist/integration/react';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 import { persistor } from '@services/store';
 

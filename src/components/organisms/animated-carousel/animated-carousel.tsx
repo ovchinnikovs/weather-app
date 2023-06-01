@@ -1,16 +1,15 @@
-import { FlatList } from 'react-native-gesture-handler';
-
 import React, { FC } from 'react';
+import { FlatList } from 'react-native-gesture-handler';
 import { Animated, ListRenderItem } from 'react-native';
 
-import { CustomStatusBar } from '@components/atoms/status-bar';
 import { Slide } from '@components/molecules/slide';
+import { CustomStatusBar } from '@components/atoms/status-bar';
 import { IWeatherItemDataWithDay } from '@screens/weather-list';
-import { IAnimatedCarousel, TGetItemLayout } from './animated-carousel.types';
-
-import { useAnimatedCarouselState } from './animated-carousel.state';
 
 import { COLOR } from '@theme/colors';
+
+import { useAnimatedCarouselState } from './animated-carousel.state';
+import { IAnimatedCarousel, TGetItemLayout } from './animated-carousel.types';
 import { AnimatedCarouselStyles as Styled } from './animated-carousel.styles';
 
 export const AnimatedCarousel: FC<IAnimatedCarousel> = (props) => {
@@ -23,6 +22,7 @@ export const AnimatedCarousel: FC<IAnimatedCarousel> = (props) => {
     currentIndex,
     slidesRef,
     onItemChange,
+    setCurrentIndex,
   } = useAnimatedCarouselState(props);
 
   const renderItem: ListRenderItem<IWeatherItemDataWithDay> = ({
@@ -62,8 +62,13 @@ export const AnimatedCarousel: FC<IAnimatedCarousel> = (props) => {
       extrapolate: 'clamp',
     });
 
+    const onPressDay = () => {
+      setCurrentIndex(i);
+      slidesRef.current.scrollToOffset({ animated: true, offset: i * width });
+    };
+
     return (
-      <Styled.Day>
+      <Styled.Day onPress={onPressDay}>
         <Styled.DayText activeDay={currentIndex === i}>
           {slide.dayOfWeek}
         </Styled.DayText>
@@ -83,7 +88,7 @@ export const AnimatedCarousel: FC<IAnimatedCarousel> = (props) => {
     );
   });
 
-  const scroll = Animated.event(
+  const onScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
     { useNativeDriver: false }
   );
@@ -105,7 +110,7 @@ export const AnimatedCarousel: FC<IAnimatedCarousel> = (props) => {
         horizontal
         pagingEnabled
         ref={slidesRef}
-        onScroll={scroll}
+        onScroll={onScroll}
         data={weatherDays}
         scrollEventThrottle={32}
         renderItem={renderItem}

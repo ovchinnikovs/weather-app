@@ -3,8 +3,10 @@ import { SectionList } from 'react-native';
 
 import { CustomHeader } from '@components/molecules/custom-header';
 import { WeatherBottomSheet } from '@components/organisms/weather-bottom-sheet';
-import { WeatherHeader } from './components/atoms/weather-header';
-import { WeatherBox } from './components/molecules/weather-box';
+
+import { WeatherHeader } from './components/weather-header';
+import { WeatherBox } from './components/weather-box';
+
 import {
   IRenderWeatherHeader,
   IWeatherItemDataWithDay,
@@ -32,6 +34,7 @@ export const WeatherListScreen = () => {
     const isLast = index === section.data.length - 1;
     const isSecondWeek = section.title === 'second week';
     const currentWeek = weekSections.find((w) => w.title === 'current week');
+
     const secondWeekIndex =
       Number(currentWeek?.data.length) + section.data.length - 1;
 
@@ -46,22 +49,30 @@ export const WeatherListScreen = () => {
     );
   };
 
-  const renderWeatherHeader = ({ section }: IRenderWeatherHeader) => {
-    return <WeatherHeader section={section} />;
-  };
+  const renderWeatherHeader = ({ section }: IRenderWeatherHeader) => (
+    <WeatherHeader section={section} />
+  );
 
   const keyExtractor = (item: IWeatherItemDataWithDay) => item.dayOfWeek;
 
-  const { allTemperature, list } = weekSections[0].data[0];
+  const {
+    allTemperature: { tempMax, tempMin },
+    list: [
+      {
+        main: { temp },
+        weather: [currentDayWeatherData],
+      },
+    ],
+  } = weekSections?.[0]?.data?.[0];
 
   return (
     <Styled.Wrapper>
       <CustomHeader
-        city={city.name}
-        tempMax={allTemperature.tempMax}
-        tempMin={allTemperature.tempMin}
-        currentTemp={list[0].main.temp}
-        currentWeatherData={list[0].weather[0]}
+        tempMax={tempMax}
+        tempMin={tempMin}
+        currentTemp={temp}
+        cityName={city.name}
+        currentWeatherData={currentDayWeatherData}
       />
       <SectionList
         bounces={false}

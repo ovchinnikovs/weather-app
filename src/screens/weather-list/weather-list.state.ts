@@ -1,9 +1,10 @@
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
 
-import { useDispatch, useSelector } from '@services/helpers/store.helper';
 import { setOnboardingDone } from '@services/store/main';
 import { todoRequestWeatherData } from '@services/store/weather';
+import { useDispatch, useSelector } from '@services/helpers/store.helper';
+
 import { groupWeatherByWeek } from './weather-list.utils';
 
 export const useWeatherListState = () => {

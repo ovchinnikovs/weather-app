@@ -3,9 +3,10 @@ import { space, SpaceProps } from 'styled-system';
 
 import { Icon } from '@components/atoms/icon';
 import { Text } from '@components/atoms/text';
-import { TButton } from './button.types';
 
 import { COLOR } from '@theme/colors';
+
+import { TButton } from './button.types';
 
 interface IButton extends SpaceProps {
   type?: TButton;
